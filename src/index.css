@@ -1,0 +1,321 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-arabic: "Cairo", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* KodaSoft brand — pulled from the logo */
+  --color-navy-950: #050d18;
+  --color-navy-900: #081527;
+  --color-navy-800: #0a1e38;
+  --color-navy-700: #0d2b4e;
+  --color-navy-600: #123a63;
+  --color-navy-500: #1a4d80;
+  --color-cyan-500: #2bb8f0;
+  --color-cyan-400: #4cc6f5;
+  --color-cyan-300: #7fd8ff;
+  --color-ice: #e8f4fd;
+
+  --animate-marquee: marquee 32s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-pulse-slow: pulse 5s ease-in-out infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-navy-950);
+  color: var(--color-ice);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-cyan-500) 35%, transparent);
+  color: #fff;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--color-navy-950); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-navy-600);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-cyan-500); }
+
+/* ---- Reusable effect layers ---- */
+
+/* Frosted glass card */
+.glass {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--color-navy-700) 45%, transparent),
+    color-mix(in srgb, var(--color-navy-800) 30%, transparent)
+  );
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid color-mix(in srgb, var(--color-cyan-500) 14%, transparent);
+}
+
+/* Cyan text gradient */
+.text-gradient {
+  background: linear-gradient(92deg, #7fd8ff 0%, #2bb8f0 45%, #6ea8ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Subtle blueprint grid backdrop */
+.bg-grid {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--color-cyan-500) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--color-cyan-500) 5%, transparent) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
+}
+
+/* Glowing conic border that spins on hover (uses @property for animatable angle) */
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.glow-border {
+  position: relative;
+  border-radius: 1rem;
+}
+.glow-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--border-angle),
+    transparent 0%,
+    color-mix(in srgb, var(--color-cyan-500) 60%, transparent) 12%,
+    transparent 26%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.glow-border:hover::before {
+  opacity: 1;
+  animation: border-spin 3.2s linear infinite;
+}
+@keyframes border-spin {
+  to { --border-angle: 360deg; }
+}
+
+/* Radial spotlight that follows the pointer (position fed via CSS vars from JS) */
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+}
+.spotlight-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    420px circle at var(--mx, 50%) var(--my, 50%),
+    color-mix(in srgb, var(--color-cyan-500) 10%, transparent),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.spotlight-card:hover::after { opacity: 1; }
+
+/* Removed SVG fractalNoise filter due to extreme GPU overhead and performance issues. */
+
+/* Nav underline sweep */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--color-cyan-500), var(--color-cyan-300));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
+
+/* ---- RTL Support ---- */
+html[dir="rtl"] {
+  font-family: var(--font-arabic);
+}
+
+html[dir="rtl"] body {
+  font-family: var(--font-arabic);
+}
+
+/* Force Arabic font across ALL Tailwind font utilities */
+html[dir="rtl"] .font-sans,
+html[dir="rtl"] .font-display,
+html[dir="rtl"] .font-mono,
+html[dir="rtl"] * {
+  font-family: var(--font-arabic) !important;
+}
+
+/* RTL nav link underline from right */
+html[dir="rtl"] .nav-link::after {
+  transform-origin: right;
+}
+
+/* RTL marquee direction */
+html[dir="rtl"] .marquee-track {
+  animation-direction: reverse;
+}
+
+/* ================================================================
+   LIGHT THEME
+   Overrides the @theme color tokens via [data-theme="light"] so
+   every Tailwind utility (bg-navy-950, text-ice, border-cyan-500…)
+   automatically adapts with zero component changes.
+   ================================================================ */
+
+[data-theme="light"] {
+  /* Page surfaces — clean white + soft grays */
+  --color-navy-950: #f8fafc;
+  --color-navy-900: #ffffff;
+  --color-navy-800: #f1f5f9;
+  --color-navy-700: #e2e8f0;
+  --color-navy-600: #cbd5e1;
+  --color-navy-500: #94a3b8;
+
+  /* Text — dark on light */
+  --color-ice: #0f172a;
+
+  /* Cyan accents — deeper for contrast on white */
+  --color-cyan-500: #0284c7;
+  --color-cyan-400: #0ea5e9;
+  --color-cyan-300: #38bdf8;
+
+  /* White utility → dark so bg-white/5 and border-white/10
+     become subtle dark tints on light backgrounds */
+  --color-white: #0f172a;
+}
+
+/* Selection: dark text on blue highlight */
+[data-theme="light"] ::selection {
+  color: #fff;
+}
+
+/* Text gradient — deeper blues for light-bg contrast */
+[data-theme="light"] .text-gradient {
+  background: linear-gradient(92deg, #0369a1 0%, #0284c7 45%, #2563eb 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Grid lines — slightly more visible on white */
+[data-theme="light"] .bg-grid {
+  background-image:
+    linear-gradient(
+      color-mix(in srgb, var(--color-cyan-500) 7%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-cyan-500) 7%, transparent) 1px,
+      transparent 1px
+    );
+}
+
+/* Spotlight card — softer radial glow */
+[data-theme="light"] .spotlight-card::after {
+  background: radial-gradient(
+    420px circle at var(--mx, 50%) var(--my, 50%),
+    color-mix(in srgb, var(--color-cyan-500) 8%, transparent),
+    transparent 65%
+  );
+}
+
+/* Aurora background — softer but still visible in light mode */
+[data-theme="light"] [data-aurora] {
+  opacity: 0.55;
+}
+
+/* Cursor glow — visible and multiply-blended for light bg */
+[data-theme="light"] [data-cursor-glow] {
+  opacity: 0.45;
+  mix-blend-mode: multiply;
+}
+
+/* Scrollbar — light track, medium thumb */
+[data-theme="light"] ::-webkit-scrollbar-track {
+  background: var(--color-navy-950);
+}
+
+/* Hero headline glow — visible on light bg */
+[data-theme="light"] [data-hero-glow] {
+  opacity: 0.65;
+}
+
+/* Contact section glow — visible on light bg */
+[data-theme="light"] [data-contact-glow] {
+  opacity: 0.65;
+}
+
+/* Process timeline node — keep dark dot in both themes */
+[data-theme="light"] .process-node {
+  background-color: var(--color-navy-800);
+}
+
+/* Logo image filter for light backgrounds */
+[data-theme="light"] img[alt="KodaSoft Logo"] {
+  filter: brightness(1.1) saturate(0.9);
+}
+
+/* Button sheen sweep — lighter in light mode */
+[data-theme="light"] .group:hover > .pointer-events-none:last-child {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--color-navy-950) 20%, transparent),
+    transparent
+  );
+}

@@ -1,0 +1,241 @@
+{
+  "nav": {
+    "services": "Services",
+    "about": "About",
+    "process": "Process",
+    "work": "Work",
+    "contact": "Contact",
+    "startProject": "Start your project"
+  },
+  "hero": {
+    "badge": "Accepting new projects — 2026",
+    "headline1": "We build software",
+    "headline2": "that moves your",
+    "headline3": "business",
+    "headline4": "forward.",
+    "subtitle": "We turn your ideas into websites, digital stores, and modern business systems — designed for reliable performance and a great user experience, and built to scale as your business grows.",
+    "startProject": "Start your project",
+    "exploreServices": "Explore our services",
+    "stats": {
+      "products": "Projects delivered",
+      "retention": "Client satisfaction",
+      "years": "Years of experience"
+    },
+    "floating": {
+      "badge1Icon": "⚡",
+      "badge1Title": "Lighthouse 100",
+      "badge1Desc": "Fast by design",
+      "badge2Icon": "🛡️",
+      "badge2Title": "SLA 99.9%",
+      "badge2Desc": "Built to last"
+    }
+  },
+  "services": {
+    "eyebrow": "our services",
+    "title": "Everything you need to build your product,",
+    "highlight": "in one place.",
+    "description": "From the first idea to launch and beyond — one complete team that supports you at every stage and takes responsibility for the result.",
+    "items": [
+      {
+        "title": "Custom Software",
+        "desc": "Systems designed around the way you work — ERP, CRM, and internal tools that simplify operations and save time and cost.",
+        "tags": ["ERP & CRM", "SaaS platforms", "APIs"]
+      },
+      {
+        "title": "Websites & Web Apps",
+        "desc": "Fast-loading, easy-to-use websites and web platforms, built with modern technology to give your visitors a smooth experience that keeps them coming back.",
+        "tags": ["React / Next.js", "Design systems", "PWA"]
+      },
+      {
+        "title": "Mobile Apps",
+        "desc": "iOS and Android apps from a single codebase — high quality, lower cost, and a faster path to the app stores and your users.",
+        "tags": ["React Native", "Flutter", "App Store ready"]
+      },
+      {
+        "title": "Cloud & DevOps",
+        "desc": "Secure, stable cloud infrastructure that grows with your business, with automated deployments that deliver smooth updates without downtime.",
+        "tags": ["AWS / Azure", "Kubernetes", "CI/CD"]
+      },
+      {
+        "title": "AI & Data",
+        "desc": "Get real value from your data — practical AI features and analytics that improve your decisions and add genuine value to your product.",
+        "tags": ["LLM integration", "ML pipelines", "Analytics"]
+      },
+      {
+        "title": "Security & QA",
+        "desc": "Automated testing and security reviews at every stage of development, so your product reaches users stable and secure from day one.",
+        "tags": ["Audits", "Test automation", "Compliance"]
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "about us",
+    "title": "An experienced team that cares about",
+    "highlight": "your success.",
+    "description": "KodaSoft is a team of experienced engineers working with simple structure and direct communication. We believe good software comes from deeply understanding your needs — and a commitment to quality in every detail.",
+    "stats": {
+      "products": "Projects delivered",
+      "retention": "Client satisfaction",
+      "engineers": "Experienced engineers",
+      "years": "Years of work"
+    },
+    "values": [
+      {
+        "title": "Quality in the details",
+        "desc": "Every line of code is reviewed and tested. We build software that is easy to maintain and extend, so it keeps serving your business for years."
+      },
+      {
+        "title": "Full transparency",
+        "desc": "Regular progress demos, a clear plan, and honest estimates. You always know where your project stands and what comes next."
+      },
+      {
+        "title": "Focus on results",
+        "desc": "We measure our success by what the product achieves for your business — better efficiency, happier customers, and real growth."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "how we work",
+    "title": "From idea to launch in",
+    "highlight": "five clear stages.",
+    "description": "A proven way of working that gives you full clarity at every stage and delivers your project on time, at the quality you expect.",
+    "steps": [
+      {
+        "num": "01",
+        "title": "Understand",
+        "desc": "We start by listening: your goals, your audience, and your challenges. Together we define the scope and what success looks like — before writing any code.",
+        "mono": "kodasoft discover"
+      },
+      {
+        "num": "02",
+        "title": "Design",
+        "desc": "We design the user experience and the technical architecture, and share early interactive prototypes so you can confirm the product is heading in the right direction.",
+        "mono": "kodasoft design"
+      },
+      {
+        "num": "03",
+        "title": "Build",
+        "desc": "We work in short cycles with regular demos of what's been completed. You watch your project take shape continuously on a real staging environment.",
+        "mono": "kodasoft build"
+      },
+      {
+        "num": "04",
+        "title": "Launch",
+        "desc": "We launch your product with a careful plan that ensures a smooth transition without interruptions, and monitor performance and stability closely after release.",
+        "mono": "kodasoft deploy"
+      },
+      {
+        "num": "05",
+        "title": "Grow",
+        "desc": "After launch, we track performance, analyze usage, and keep improving the product with you — so it evolves with your business and your customers' needs.",
+        "mono": "kodasoft scale"
+      }
+    ]
+  },
+  "work": {
+    "eyebrow": "our work",
+    "title": "Products we're proud",
+    "highlight": "to stand behind.",
+    "description": "A selection of client projects and the real-world results they achieved.",
+    "projects": [
+      {
+        "title": "FinPulse",
+        "category": "Fintech · SaaS platform",
+        "result": "240% user growth in the 6 months after relaunch"
+      },
+      {
+        "title": "MediTrack",
+        "category": "HealthTech · Mobile app",
+        "result": "4.9★ rating across 60,000+ app-store reviews"
+      },
+      {
+        "title": "CartVelocity",
+        "category": "E-commerce · Digital storefront",
+        "result": "Checkout completion up 31% in 90 days"
+      },
+      {
+        "title": "Lexi AI",
+        "category": "LegalTech · AI assistant",
+        "result": "Document review 12× faster at 89% accuracy"
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "client feedback",
+    "title": "Partners who speak",
+    "highlight": "from experience.",
+    "items": [
+      {
+        "quote": "We worked with several vendors before KodaSoft, and the difference was clear from week one: quick understanding of requirements, constant communication, and a fully rebuilt platform delivered in 16 weeks that has run reliably ever since.",
+        "name": "Sarah Mitchell",
+        "role": "CTO, FinPulse",
+        "initials": "SM"
+      },
+      {
+        "quote": "What set the team apart was how they thought with us, as partners. At every stage they suggested improvements that made the product better — and it showed directly in our user growth after launch.",
+        "name": "David Okafor",
+        "role": "Founder, MediTrack",
+        "initials": "DO"
+      },
+      {
+        "quote": "Full commitment to deadlines, clear communication, and high-quality execution in every detail. We launched on schedule and within the agreed budget.",
+        "name": "Lena Vogel",
+        "role": "VP Product, CartVelocity",
+        "initials": "LV"
+      }
+    ]
+  },
+  "contact": {
+    "comment": "// let's talk",
+    "title": "The market won't wait.",
+    "highlight": "Why are you?",
+    "subtitle": "Tell us about your project, and we'll get back to you within one business day with a clear view of the scope, timeline, and the best way to bring it to life.",
+    "email": "kodasoft.dev@gmail.com",
+    "phone": "+966560675331",
+    "whatsapp": "Contact via WhatsApp",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Ada Lovelace",
+      "email": "Email",
+      "emailPlaceholder": "ada@company.com",
+      "company": "Company",
+      "companyPlaceholder": "Acme Inc.",
+      "phone": "Phone number",
+      "phonePlaceholder": "+966 56 067 5331",
+      "details": "Project details",
+      "detailsPlaceholder": "What would you like to build, and what goal are you aiming for?",
+      "send": "Send message"
+    },
+    "success": {
+      "title": "Message received.",
+      "subtitle": "Thank you for reaching out — we'll get back to you within one business day."
+    }
+  },
+  "footer": {
+    "tagline": "We build software that moves your business forward — with high quality, clear communication, and a partnership that lasts.",
+    "columns": {
+      "services": "Services",
+      "company": "Company",
+      "legal": "Legal"
+    },
+    "links": {
+      "customSoftware": "Custom Software",
+      "webApps": "Web Apps",
+      "mobileApps": "Mobile Apps",
+      "cloudDevOps": "Cloud & DevOps",
+      "aiData": "AI & Data",
+      "about": "About",
+      "process": "Our Process",
+      "work": "Our Work",
+      "careers": "Careers",
+      "blog": "Blog",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service",
+      "cookies": "Cookies"
+    },
+    "copyright": "All rights reserved.",
+    "crafted": "{ crafted with care and clean code }"
+  },
+  "scrollToServices": "Scroll to services",
+  "showTestimonial": "Show testimonial {{number}}"
+}

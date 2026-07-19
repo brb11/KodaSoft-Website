@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g" x1="0" y1="64" x2="64" y2="0">
+      <stop offset="0" stop-color="#0d2b4e"/>
+      <stop offset="1" stop-color="#0a1e38"/>
+    </linearGradient>
+    <linearGradient id="c" x1="0" y1="64" x2="64" y2="0">
+      <stop offset="0" stop-color="#2bb8f0"/>
+      <stop offset="1" stop-color="#7fd8ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#g)"/>
+  <text x="12" y="45" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" font-size="34" fill="#e8f4fd">{</text>
+  <text x="27" y="45" font-family="JetBrains Mono, Consolas, monospace" font-weight="700" font-size="34" fill="url(#c)">K</text>
+</svg>

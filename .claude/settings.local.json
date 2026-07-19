@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"c:/Users/User/Desktop/KodaSoft/KodaSoft Website\" && ls -la && echo \"---PARENT---\" && ls -la ..)",
+      "Read(//c/Users/User/Desktop/KodaSoft/**)",
+      "Bash(node -v)",
+      "Bash(npm -v)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Read(//tmp/**)",
+      "Bash(curl -s http://localhost:5174/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5174/src/main.tsx)",
+      "Bash(npm i *)",
+      "Bash(node verify-shots.mjs)"
+    ]
+  }
+}
