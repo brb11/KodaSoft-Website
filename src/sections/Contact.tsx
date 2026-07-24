@@ -26,6 +26,7 @@ export default function Contact() {
     anchor.href = mailtoLink;
     anchor.click();
 
+    e.currentTarget.reset();
     setSent(true);
   };
 
@@ -113,7 +114,7 @@ export default function Contact() {
                 </div>
 
                 <Button as="button" type="submit" className="w-full sm:w-auto">
-                  {t("contact.form.send")} <span aria-hidden>→</span>
+                  {t("contact.form.send")} <span aria-hidden className="rtl-flip">→</span>
                 </Button>
               </form>
             )}

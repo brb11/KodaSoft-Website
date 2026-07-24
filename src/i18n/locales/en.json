@@ -8,12 +8,13 @@
     "startProject": "Start your project"
   },
   "hero": {
-    "badge": "Accepting new projects — 2026",
-    "headline1": "We build software",
-    "headline2": "that moves your",
-    "headline3": "business",
-    "headline4": "forward.",
-    "subtitle": "We turn your ideas into websites, digital stores, and modern business systems — designed for reliable performance and a great user experience, and built to scale as your business grows.",
+    "badge": "While others make promises, we ship products.",
+    "headline1": "Software",
+    "headline2": "designed",
+    "headline3": "for growth,",
+    "headline4": "built",
+    "headline5": "for leadership.",
+    "subtitle": "We design, build, and launch digital products — from early-stage startups to enterprise platforms — with the focus and quality your business deserves.",
     "startProject": "Start your project",
     "exploreServices": "Explore our services",
     "stats": {
@@ -22,12 +23,10 @@
       "years": "Years of experience"
     },
     "floating": {
-      "badge1Icon": "⚡",
-      "badge1Title": "Lighthouse 100",
-      "badge1Desc": "Fast by design",
-      "badge2Icon": "🛡️",
-      "badge2Title": "SLA 99.9%",
-      "badge2Desc": "Built to last"
+      "badge1Title": "Built for performance",
+      "badge1Desc": "Real numbers, not promises",
+      "badge2Title": "Precision engineering",
+      "badge2Desc": "Every line, reviewed"
     }
   },
   "services": {
@@ -38,35 +37,79 @@
     "items": [
       {
         "title": "Custom Software",
-        "desc": "Systems designed around the way you work — ERP, CRM, and internal tools that simplify operations and save time and cost.",
-        "tags": ["ERP & CRM", "SaaS platforms", "APIs"]
+        "desc": "Systems designed specifically to fit the way your company works — from internal tools to complex enterprise platforms.",
+        "bullets": [
+          "ERP & CRM",
+          "Business management systems",
+          "Customer portals",
+          "Dashboards"
+        ]
       },
       {
         "title": "Websites & Web Apps",
-        "desc": "Fast-loading, easy-to-use websites and web platforms, built with modern technology to give your visitors a smooth experience that keeps them coming back.",
-        "tags": ["React / Next.js", "Design systems", "PWA"]
+        "desc": "Fast, secure, and scalable web platforms built with a user experience focused on turning visitors into customers.",
+        "bullets": [
+          "Corporate websites",
+          "SaaS platforms",
+          "Customer portals",
+          "Progressive Web Apps"
+        ]
       },
       {
         "title": "Mobile Apps",
-        "desc": "iOS and Android apps from a single codebase — high quality, lower cost, and a faster path to the app stores and your users.",
-        "tags": ["React Native", "Flutter", "App Store ready"]
+        "desc": "High-performance iOS and Android apps designed to deliver a smooth experience while reducing development time and cost.",
+        "bullets": [
+          "Business apps",
+          "Commerce apps",
+          "Internal tools",
+          "App Store & Google Play launch"
+        ]
+      },
+      {
+        "title": "E-Commerce",
+        "desc": "Complete e-commerce solutions that help you sell and manage operations efficiently.",
+        "bullets": [
+          "Online stores",
+          "Payment gateways",
+          "Inventory management",
+          "Orders & shipping",
+          "System integrations"
+        ]
+      },
+      {
+        "title": "AI & Automation",
+        "desc": "Transform manual processes into smart systems that save time and boost productivity using AI and automation.",
+        "bullets": [
+          "AI Agents",
+          "Chatbots",
+          "LLM integration",
+          "Workflow automation",
+          "Document processing",
+          "Data analytics"
+        ]
       },
       {
         "title": "Cloud & DevOps",
-        "desc": "Secure, stable cloud infrastructure that grows with your business, with automated deployments that deliver smooth updates without downtime.",
-        "tags": ["AWS / Azure", "Kubernetes", "CI/CD"]
-      },
-      {
-        "title": "AI & Data",
-        "desc": "Get real value from your data — practical AI features and analytics that improve your decisions and add genuine value to your product.",
-        "tags": ["LLM integration", "ML pipelines", "Analytics"]
-      },
-      {
-        "title": "Security & QA",
-        "desc": "Automated testing and security reviews at every stage of development, so your product reaches users stable and secure from day one.",
-        "tags": ["Audits", "Test automation", "Compliance"]
+        "desc": "Modern infrastructure that ensures system stability, fast deployment, and scalability as your business grows.",
+        "bullets": [
+          "Cloud infrastructure",
+          "CI/CD pipelines",
+          "Docker & Kubernetes",
+          "Monitoring",
+          "Security"
+        ]
       }
-    ]
+    ],
+    "guarantees": {
+      "heading": "The standard we never compromise",
+      "items": [
+        "Modern security standards",
+        "Quality testing",
+        "High performance",
+        "Scalability",
+        "Full documentation"
+      ]
+    }
   },
   "about": {
     "eyebrow": "about us",
@@ -102,7 +145,7 @@
     "steps": [
       {
         "num": "01",
-        "title": "Understand",
+        "title": "Analysis",
         "desc": "We start by listening: your goals, your audience, and your challenges. Together we define the scope and what success looks like — before writing any code.",
         "mono": "kodasoft discover"
       },
@@ -132,66 +175,13 @@
       }
     ]
   },
-  "work": {
-    "eyebrow": "our work",
-    "title": "Products we're proud",
-    "highlight": "to stand behind.",
-    "description": "A selection of client projects and the real-world results they achieved.",
-    "projects": [
-      {
-        "title": "FinPulse",
-        "category": "Fintech · SaaS platform",
-        "result": "240% user growth in the 6 months after relaunch"
-      },
-      {
-        "title": "MediTrack",
-        "category": "HealthTech · Mobile app",
-        "result": "4.9★ rating across 60,000+ app-store reviews"
-      },
-      {
-        "title": "CartVelocity",
-        "category": "E-commerce · Digital storefront",
-        "result": "Checkout completion up 31% in 90 days"
-      },
-      {
-        "title": "Lexi AI",
-        "category": "LegalTech · AI assistant",
-        "result": "Document review 12× faster at 89% accuracy"
-      }
-    ]
-  },
-  "testimonials": {
-    "eyebrow": "client feedback",
-    "title": "Partners who speak",
-    "highlight": "from experience.",
-    "items": [
-      {
-        "quote": "We worked with several vendors before KodaSoft, and the difference was clear from week one: quick understanding of requirements, constant communication, and a fully rebuilt platform delivered in 16 weeks that has run reliably ever since.",
-        "name": "Sarah Mitchell",
-        "role": "CTO, FinPulse",
-        "initials": "SM"
-      },
-      {
-        "quote": "What set the team apart was how they thought with us, as partners. At every stage they suggested improvements that made the product better — and it showed directly in our user growth after launch.",
-        "name": "David Okafor",
-        "role": "Founder, MediTrack",
-        "initials": "DO"
-      },
-      {
-        "quote": "Full commitment to deadlines, clear communication, and high-quality execution in every detail. We launched on schedule and within the agreed budget.",
-        "name": "Lena Vogel",
-        "role": "VP Product, CartVelocity",
-        "initials": "LV"
-      }
-    ]
-  },
   "contact": {
     "comment": "// let's talk",
     "title": "The market won't wait.",
     "highlight": "Why are you?",
     "subtitle": "Tell us about your project, and we'll get back to you within one business day with a clear view of the scope, timeline, and the best way to bring it to life.",
     "email": "kodasoft.dev@gmail.com",
-    "phone": "+966560675331",
+    "phone": "+967 736888928",
     "whatsapp": "Contact via WhatsApp",
     "form": {
       "name": "Name",
@@ -201,7 +191,7 @@
       "company": "Company",
       "companyPlaceholder": "Acme Inc.",
       "phone": "Phone number",
-      "phonePlaceholder": "+966 56 067 5331",
+      "phonePlaceholder": "+966 50 000 0000",
       "details": "Project details",
       "detailsPlaceholder": "What would you like to build, and what goal are you aiming for?",
       "send": "Send message"
@@ -222,19 +212,13 @@
       "customSoftware": "Custom Software",
       "webApps": "Web Apps",
       "mobileApps": "Mobile Apps",
+      "eCommerce": "E-Commerce",
+      "aiAutomation": "AI & Automation",
       "cloudDevOps": "Cloud & DevOps",
-      "aiData": "AI & Data",
       "about": "About",
-      "process": "Our Process",
-      "work": "Our Work",
-      "careers": "Careers",
-      "blog": "Blog",
-      "privacyPolicy": "Privacy Policy",
-      "termsOfService": "Terms of Service",
-      "cookies": "Cookies"
+      "process": "Our Process"
     },
-    "copyright": "All rights reserved.",
-    "crafted": "{ crafted with care and clean code }"
+    "copyright": "All rights reserved."
   },
   "scrollToServices": "Scroll to services",
   "showTestimonial": "Show testimonial {{number}}"

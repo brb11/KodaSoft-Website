@@ -1,121 +1,67 @@
 import { useTranslation } from "react-i18next";
-import Logo from "../components/Logo";
-
-// Icons will be defined inline
 
 export default function Footer() {
   const { t } = useTranslation();
 
-  const contacts = [
+  const links = [
+    { label: t("footer.columns.services"), href: "#services" },
+    { label: t("footer.links.whoWeAre"), href: "#about" },
+    { label: t("footer.links.ourStrategy"), href: "#process" },
+  ];
+
+  const socials = [
     { label: "Email", icon: <MailIcon className="h-5 w-5" />, href: `mailto:${t("contact.email")}` },
     { label: "Phone", icon: <PhoneIcon className="h-5 w-5" />, href: `tel:${t("contact.phone").replace(/[^\d+]/g, "")}` },
     { label: "WhatsApp", icon: <WhatsappIcon className="h-5 w-5" />, href: `https://wa.me/${t("contact.phone").replace(/[^\d]/g, "")}` },
   ];
 
-  const columns = [
-    {
-      title: t("footer.columns.services"),
-      links: [
-        t("footer.links.customSoftware"),
-        t("footer.links.webApps"),
-        t("footer.links.mobileApps"),
-        t("footer.links.cloudDevOps"),
-        t("footer.links.aiData"),
-      ],
-    },
-    {
-      title: t("footer.columns.company"),
-      links: [
-        t("footer.links.about"),
-        t("footer.links.process"),
-        // t("footer.links.work"),
-        t("footer.links.careers"),
-        t("footer.links.blog"),
-      ],
-    },
-    {
-      title: t("footer.columns.legal"),
-      links: [
-        t("footer.links.privacyPolicy"),
-        t("footer.links.termsOfService"),
-        t("footer.links.cookies"),
-      ],
-    },
-  ];
-
   return (
     <footer className="relative border-t border-cyan-500/10 bg-navy-900/40 backdrop-blur-sm">
       <div className="mx-auto max-w-7xl px-5 pb-10 pt-16 md:px-8">
-        <div className="grid gap-12 md:grid-cols-[1.4fr_repeat(3,1fr)]">
-          {/* Brand */}
-          <div>
-            <a href="#top" aria-label="Back to top">
-              <Logo className="h-10" />
-            </a>
-            <p className="mt-5 max-w-xs text-sm leading-relaxed text-ice/50">
-              {t("footer.tagline")}
-            </p>
-            <div className="mt-6 flex gap-3">
-              {contacts.map((c) => (
+        <div className="flex flex-col items-center text-center">
+          {/* Company name */}
+          <a href="#top" aria-label="Back to top" className="font-display text-3xl font-bold tracking-tight text-ice">
+            <span className="text-ice/80">Koda</span>
+            <span className="text-cyan-500">Soft</span>
+          </a>
+
+          {/* Tagline */}
+          <p className="mt-4 max-w-md text-sm leading-relaxed text-ice/50">
+            {t("footer.tagline")}
+          </p>
+
+          {/* Links row */}
+          <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+            {links.map((l) => (
+              <li key={l.label}>
                 <a
-                  key={c.label}
-                  href={c.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={c.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-ice/50 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/50 hover:text-cyan-300 hover:shadow-[0_8px_24px_-8px_rgba(43,184,240,0.5)]"
+                  href={l.href}
+                  className="text-sm text-ice/45 transition-colors duration-300 hover:text-cyan-300"
                 >
-                  {c.icon}
+                  {l.label}
                 </a>
-              ))}
-            </div>
+              </li>
+            ))}
+          </ul>
+
+          {/* Contact icons */}
+          <div className="mt-8 flex gap-3">
+            {socials.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                {...(s.href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}
+                aria-label={s.label}
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-ice/50 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/50 hover:text-cyan-300 hover:shadow-[0_8px_24px_-8px_rgba(43,184,240,0.5)]"
+              >
+                {s.icon}
+              </a>
+            ))}
           </div>
 
-          {/* Link columns */}
-          {columns.map((col) => (
-            <div key={col.title}>
-              <h4 className="font-display text-sm font-semibold uppercase tracking-widest text-ice/80">
-                {col.title}
-              </h4>
-              <ul className="mt-5 space-y-3">
-                {col.links.map((l) => (
-                  <li key={l}>
-                    <a
-                      href="#"
-                      className="text-sm text-ice/45 transition-colors duration-300 hover:text-cyan-300"
-                    >
-                      {l}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 sm:flex-row">
-          <p className="font-mono text-xs text-ice/35">
+          {/* Copyright */}
+          <p className="mt-10 font-mono text-xs text-ice/35">
             &copy; {new Date().getFullYear()} KodaSoft. {t("footer.copyright")}
-          </p>
-          <p className="font-mono text-xs text-ice/35">
-            {"{ "}
-            {t("footer.crafted")
-              .replace("{ ", "")
-              .replace(" }", "")
-              .split("<heart>")
-              .reduce<React.ReactNode[]>((acc, part, i) => {
-                if (i === 0) return [part];
-                const heartEnd = part.indexOf(" and ");
-                if (heartEnd === -1) {
-                  return [...acc, <span key="heart" className="text-cyan-400">♥</span>, part];
-                }
-                return [
-                  ...acc,
-                  <span key="heart" className="text-cyan-400">♥</span>,
-                  part.slice(heartEnd),
-                ];
-              }, [])}
-            {" }"}
           </p>
         </div>
       </div>

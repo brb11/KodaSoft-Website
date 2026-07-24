@@ -27,7 +27,7 @@ export default function Testimonials() {
 
       <div className="glass relative min-h-[280px] overflow-hidden rounded-3xl p-10 md:p-14">
         {/* big quote glyph */}
-        <span aria-hidden className="absolute -top-4 start-8 font-display text-[120px] leading-none text-cyan-500/15">
+        <span aria-hidden className="absolute -top-4 start-8 font-display text-[80px] leading-none text-cyan-500/15 sm:text-[120px]">
           &#x201C;
         </span>
 

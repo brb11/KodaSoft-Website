@@ -5,15 +5,16 @@ import Particles from "../components/Particles";
 import Button from "../components/Button";
 
 const CODE_LINES = [
-  { text: "const product = await kodasoft.build({", cls: "text-ice/80" },
-  { text: '  idea:        "your-vision",', cls: "text-cyan-300" },
-  { text: '  experience:  "delightful",', cls: "text-cyan-300" },
-  { text: '  performance: "reliable",', cls: "text-cyan-300" },
-  { text: "  scalable:    true,", cls: "text-cyan-300" },
+  { text: "const product = await kodasoft.create({", cls: "text-ice/80" },
+  { text: "  strategy,", cls: "text-cyan-300" },
+  { text: "  design,", cls: "text-cyan-300" },
+  { text: "  engineering,", cls: "text-cyan-300" },
   { text: "});", cls: "text-ice/80" },
+  { text: "await product.launch();", cls: "text-ice/80" },
   { text: "", cls: "" },
-  { text: "product.launch(); // ✓ delivered on time", cls: "text-emerald-400/90" },
-  { text: "product.grow();   // and growing with you", cls: "text-ice/40" },
+  { text: "while (business.grows()) {", cls: "text-ice/80" },
+  { text: "  product.evolve();", cls: "text-cyan-300" },
+  { text: "}", cls: "text-ice/80" },
 ];
 
 /** Typewriter that reveals the code block line by line. */
@@ -81,7 +82,7 @@ export default function Hero() {
   const contentY = useTransform(scrollYProgress, [0, 1], [0, 140]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
-  const headline = [t("hero.headline1"), t("hero.headline2"), t("hero.headline3")];
+  const headline = [t("hero.headline1"), t("hero.headline2"), t("hero.headline3"), t("hero.headline4")];
 
   return (
     <section ref={sectionRef} id="top" className="relative flex min-h-screen items-center overflow-hidden pt-28 pb-16">
@@ -111,7 +112,7 @@ export default function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
             </span>
-            <span className="font-mono text-xs tracking-wider text-ice/70">
+            <span className="whitespace-nowrap font-mono text-[10px] tracking-wide text-ice/70 sm:text-xs sm:tracking-wider">
               {t("hero.badge")}
             </span>
           </motion.div>
@@ -120,7 +121,7 @@ export default function Hero() {
             {headline.map((word, i) => (
               <motion.span
                 key={word}
-                className="me-4 inline-block"
+                className={`me-4 inline-block${i === 2 ? " text-cyan-400" : ""}`}
                 initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.7, delay: 0.25 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
@@ -128,14 +129,14 @@ export default function Hero() {
                 {word}
               </motion.span>
             ))}
-            {t("hero.headline4") && (
+            {t("hero.headline5") && (
               <motion.span
                 className="text-gradient inline-block"
                 initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.7, delay: 0.25 + headline.length * 0.12, ease: [0.22, 1, 0.36, 1] }}
               >
-                {t("hero.headline4")}
+                {t("hero.headline5")}
               </motion.span>
             )}
           </h1>
@@ -156,7 +157,7 @@ export default function Hero() {
             className="mt-9 flex flex-wrap items-center gap-4"
           >
             <Button href="#contact">
-              {t("hero.startProject")} <span aria-hidden>→</span>
+              {t("hero.startProject")} <span aria-hidden className="rtl-flip">→</span>
             </Button>
             <Button href="#services" variant="ghost">
               {t("hero.exploreServices")}
@@ -168,7 +169,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.1 }}
-            className="mt-12 flex flex-wrap gap-x-10 gap-y-4"
+            className="mt-12 flex flex-wrap gap-x-8 gap-y-4 sm:gap-x-10"
           >
             {[
               ["50+", t("hero.stats.products")],
@@ -176,8 +177,8 @@ export default function Hero() {
               ["6+", t("hero.stats.years")],
             ].map(([num, label]) => (
               <div key={label}>
-                <p className="font-display text-2xl font-bold text-ice">{num}</p>
-                <p className="text-xs uppercase tracking-widest text-ice/45">{label}</p>
+                <p className="font-display text-xl font-bold text-ice sm:text-2xl">{num}</p>
+                <p className="text-[10px] uppercase tracking-widest text-ice/45 sm:text-xs">{label}</p>
               </div>
             ))}
           </motion.div>
@@ -220,7 +221,9 @@ export default function Hero() {
             className="glass absolute -left-8 -bottom-8 flex items-center gap-3 rounded-2xl px-5 py-4"
             style={{ transform: "translateZ(60px)" }}
           >
-            <span className="text-2xl">{t("hero.floating.badge1Icon")}</span>
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-cyan-500/15">
+              <span className="h-2 w-2 rounded-full bg-cyan-400" />
+            </span>
             <div>
               <p className="text-sm font-semibold text-ice">{t("hero.floating.badge1Title")}</p>
               <p className="text-xs text-ice/50">{t("hero.floating.badge1Desc")}</p>
@@ -231,7 +234,9 @@ export default function Hero() {
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
             className="glass absolute -right-6 -top-8 flex items-center gap-3 rounded-2xl px-5 py-4"
           >
-            <span className="text-2xl">{t("hero.floating.badge2Icon")}</span>
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500/15">
+              <span className="h-2 w-2 rounded-full bg-emerald-400" />
+            </span>
             <div>
               <p className="text-sm font-semibold text-ice">{t("hero.floating.badge2Title")}</p>
               <p className="text-xs text-ice/50">{t("hero.floating.badge2Desc")}</p>

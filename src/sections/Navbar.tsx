@@ -15,7 +15,6 @@ export default function Navbar() {
     { href: "#services", label: t("nav.services") },
     { href: "#about", label: t("nav.about") },
     { href: "#process", label: t("nav.process") },
-    // { href: "#work", label: t("nav.work") },
     { href: "#contact", label: t("nav.contact") },
   ];
 
@@ -69,7 +68,7 @@ export default function Navbar() {
           </button>
           <Button href="#contact">
             {t("nav.startProject")}
-            <span aria-hidden>→</span>
+            <span aria-hidden className="rtl-flip">→</span>
           </Button>
         </div>
 
@@ -124,7 +123,7 @@ export default function Navbar() {
               </li>
               <li className="px-3 pb-2">
                 <Button href="#contact" onClick={() => setOpen(false)} className="w-full">
-                  {t("nav.startProject")} →
+                  {t("nav.startProject")} <span aria-hidden className="rtl-flip">→</span>
                 </Button>
               </li>
             </ul>

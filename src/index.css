@@ -149,8 +149,6 @@ body {
 }
 .spotlight-card:hover::after { opacity: 1; }
 
-/* Removed SVG fractalNoise filter due to extreme GPU overhead and performance issues. */
-
 /* Nav underline sweep */
 .nav-link {
   position: relative;
@@ -191,12 +189,21 @@ html[dir="rtl"] body {
   font-family: var(--font-arabic);
 }
 
-/* Force Arabic font across ALL Tailwind font utilities */
+/* Force Arabic font across Tailwind font utilities */
 html[dir="rtl"] .font-sans,
 html[dir="rtl"] .font-display,
-html[dir="rtl"] .font-mono,
-html[dir="rtl"] * {
+html[dir="rtl"] .font-mono {
   font-family: var(--font-arabic) !important;
+}
+
+/* Preserve JetBrains Mono for code blocks in RTL */
+html[dir="rtl"] pre {
+  font-family: var(--font-mono) !important;
+}
+
+/* Flip forward arrows in RTL */
+html[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
 }
 
 /* RTL nav link underline from right */
@@ -204,10 +211,7 @@ html[dir="rtl"] .nav-link::after {
   transform-origin: right;
 }
 
-/* RTL marquee direction */
-html[dir="rtl"] .marquee-track {
-  animation-direction: reverse;
-}
+/* RTL marquee — forced LTR in component, no override needed */
 
 /* ================================================================
    LIGHT THEME
@@ -308,6 +312,11 @@ html[dir="rtl"] .marquee-track {
 /* Logo image filter for light backgrounds */
 [data-theme="light"] img[alt="KodaSoft Logo"] {
   filter: brightness(1.1) saturate(0.9);
+}
+
+/* Logo image — boost brightness in dark mode for visibility */
+[data-theme="dark"] img[alt="KodaSoft Logo"] {
+  filter: brightness(1.6);
 }
 
 /* Button sheen sweep — lighter in light mode */
