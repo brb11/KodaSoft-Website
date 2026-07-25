@@ -5,8 +5,8 @@ export default function Footer() {
 
   const links = [
     { label: t("footer.columns.services"), href: "#services" },
-    { label: t("footer.links.whoWeAre"), href: "#about" },
-    { label: t("footer.links.ourStrategy"), href: "#process" },
+    { label: t("footer.links.about"), href: "#about" },
+    { label: t("footer.links.process"), href: "#process" },
   ];
 
   const socials = [
