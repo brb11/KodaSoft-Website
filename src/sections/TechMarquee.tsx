@@ -1,7 +1,49 @@
 const TECH = [
-  "React", "Next.js", "TypeScript", "Node.js", "Python", ".NET", "Flutter",
-  "React Native", "PostgreSQL", "AWS", "Azure", "Docker", "Kubernetes",
-  "GraphQL", "TensorFlow", "OpenAI",
+  "React",
+  "Next.js",
+  "TypeScript",
+  "JavaScript",
+  "HTML5",
+  "CSS3",
+  "Tailwind CSS",
+  "Node.js",
+  "Express.js",
+  "Python",
+  "FastAPI",
+  "PHP",
+  "Laravel",
+  "C#",
+  "C++",
+  "Flutter",
+  "React Native",
+  "PostgreSQL",
+  "MySQL",
+  "SQL Server",
+  "MongoDB",
+  "Redis",
+  "Elasticsearch",
+  "MinIO",
+  "Supabase",
+  "PocketBase",
+  "Prisma",
+  "Sequelize",
+  "GraphQL",
+  "REST API",
+  "JWT",
+  "OAuth 2.0",
+  "Docker",
+  "Kubernetes",
+  "AWS",
+  "Azure",
+  "Nginx",
+  "Git",
+  "GitHub Actions",
+  "VMware",
+  "OpenAI",
+  "n8n",
+  "Anthropic",
+  "Google Gemini",
+  "Odoo ERP"
 ];
 
 function MarqueeSet() {
@@ -29,7 +71,7 @@ export default function TechMarquee() {
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-32 bg-gradient-to-l from-navy-950 to-transparent" />
 
       <div dir="ltr" className="overflow-hidden">
-        <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
+        <div className="flex w-max hover:[animation-play-state:paused]" style={{ animation: `marquee ${Math.max(32, TECH.length * 1.4)}s linear infinite` }}>
           <MarqueeSet />
           <MarqueeSet />
         </div>
