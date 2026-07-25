@@ -3,6 +3,6 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  base: "/kodasoft-website/",
+  base: "/",
   plugins: [react(), tailwindcss()],
 });
